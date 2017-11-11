@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(blue_channel, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 for channel in range(0, len(channel_list)):
-    GPIO.add_event_detected(channel_list[channel], GPIO.RISING)
+    GPIO.add_event_detect(channel_list[channel], GPIO.RISING)
 
 while True:
     time.sleep(0.2)
