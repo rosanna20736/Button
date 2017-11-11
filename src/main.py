@@ -18,16 +18,16 @@ for channel in range(0, len(channel_list)):
     GPIO.add_event_detect(channel_list[channel], GPIO.RISING)
 
 while True:
-    time.sleep(0.2)
+    #time.sleep(0.2)
 
     if GPIO.event_detected(blue_channel):
         requests.get(myurl, params = {'value1' : 'Big blue'})
 
-    elif GPIO.event_detected(red_channel):
+    if GPIO.event_detected(red_channel):
         requests.get(myurl, params = {'value1' : 'Big red'})
 
-    elif GPIO.event_detected(purple_channel):
+    if GPIO.event_detected(purple_channel):
         requests.get(myurl, params={'value1': 'Small purple'})
 
-    elif GPIO.event_detected(black_channel):
+    if GPIO.event_detected(black_channel):
         requests.get(myurl, params = {'value1' : 'Small black'})
