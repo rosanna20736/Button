@@ -6,7 +6,7 @@ myurl = 'https://maker.ifttt.com/trigger/button_pressed/with/key/pdleupkii6JTCj0
 
 blue_channel = 15
 red_channel = 14
-purple_channel = 2
+purple_channel = 4
 black_channel = 18
 channel_list = [blue_channel, red_channel, purple_channel, black_channel]
 
