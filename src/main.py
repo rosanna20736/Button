@@ -11,9 +11,9 @@ black_channel = 18
 channel_list = [blue_channel, red_channel, purple_channel, black_channel]
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup([channel_list], GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 for channel in range(0, len(channel_list)):
+    GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(channel_list[channel], GPIO.RISING)
 
 while True:
