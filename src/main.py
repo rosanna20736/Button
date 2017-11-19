@@ -22,16 +22,16 @@ while True:
 
     if GPIO.event_detected(blue_channel):
         print ('blue pressed')
-        requests.get(myurl, params = {'value1' : 'Big blue'})
+        #requests.get(myurl, params = {'value1' : 'Big blue'})
 
     if GPIO.event_detected(red_channel):
         print ('red pressed')
-        requests.get(myurl, params = {'value1' : 'Big red'})
+        #requests.get(myurl, params = {'value1' : 'Big red'})
 
     if GPIO.event_detected(purple_channel):
         print ('purple pressed')
-        requests.get(myurl, params={'value1': 'Small purple'})
+        #requests.get(myurl, params={'value1': 'Small purple'})
 
     if GPIO.event_detected(black_channel):
         print ('black pressed')
-        requests.get(myurl, params = {'value1' : 'Small black'})
+        #requests.get(myurl, params = {'value1' : 'Small black'})
