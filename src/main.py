@@ -13,9 +13,6 @@ channel_list = [blue_channel, red_channel, purple_channel, black_channel]
 
 GPIO.setmode(GPIO.BCM)
 
-for channel in range(0, len(channel_list)):
-    print(channel_list[channel])
-
 def my_callback(channel):
     if channel == blue_channel:
         val = "Big blue"
@@ -29,6 +26,8 @@ def my_callback(channel):
         val = "unknown"
     print('Edge detected on channel %s' % val)
     # requests.get(myurl, params = {'value1' : val})
+    while GPIO.input(channel):
+        time.sleep(0.2)
 
 
 for channel in range(0, len(channel_list)):
@@ -36,8 +35,8 @@ for channel in range(0, len(channel_list)):
     GPIO.setup(channel_list[channel], GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(channel_list[channel], GPIO.RISING, callback = my_callback)
 
-while True:
-    time.sleep(0.2)
+#while True:
+
 #
 #     if GPIO.event_detected(blue_channel):
 #         print ('blue pressed')
