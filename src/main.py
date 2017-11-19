@@ -35,8 +35,8 @@ for channel in range(0, len(channel_list)):
     GPIO.setup(channel_list[channel], GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(channel_list[channel], GPIO.RISING, callback = my_callback)
 
-#while True:
-
+while True:
+    time.sleep(0.2)
 #
 #     if GPIO.event_detected(blue_channel):
 #         print ('blue pressed')
