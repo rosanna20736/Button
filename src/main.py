@@ -14,7 +14,6 @@ channel_list = [blue_channel, red_channel, purple_channel, black_channel]
 GPIO.setmode(GPIO.BCM)
 
 def my_callback(channel):
-    time.sleep(0.5)
     if channel == blue_channel:
         val = "Big blue"
     elif channel == red_channel:
@@ -33,7 +32,7 @@ def my_callback(channel):
 for channel in channel_list:
     print(channel)
     GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(channel, GPIO.RISING, callback = my_callback)
+    GPIO.add_event_detect(channel, GPIO.RISING, callback = my_callback, bouncetime = 200)
 
 while True:
     pass
