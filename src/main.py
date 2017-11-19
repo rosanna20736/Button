@@ -26,14 +26,14 @@ def my_callback(channel):
         val = "unknown"
     print('Edge detected on channel %s' % val)
     # requests.get(myurl, params = {'value1' : val})
-    #while GPIO.input(channel):
-     #   time.sleep(0.2)
+    while GPIO.input(channel):
+       pass
 
 
-for channel in range(0, len(channel_list)):
-    print(channel_list[channel])
-    GPIO.setup(channel_list[channel], GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(channel_list[channel], GPIO.RISING, callback = my_callback)
+for channel in channel_list:
+    print(channel)
+    GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.add_event_detect(channel, GPIO.RISING, callback = my_callback)
 
 while True:
     pass
