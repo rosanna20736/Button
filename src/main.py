@@ -25,33 +25,17 @@ def my_callback(channel):
     else:
         val = "unknown"
     print('Edge detected on channel %s' % val)
-    # requests.get(myurl, params = {'value1' : val})
-
-
+    requests.get(myurl, params = {'value1' : val})
 
 for channel in channel_list:
-    print(channel)
     GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(channel, GPIO.RISING, callback = my_callback, bouncetime = 200)
+    GPIO.add_event_detect(channel, GPIO.RISING, callback = my_callback, bouncetime = 1000)
+
+print('ready')
 
 while True:
     pass
-#
-#     if GPIO.event_detected(blue_channel):
-#         print ('blue pressed')
-#         #requests.get(myurl, params = {'value1' : 'Big blue'})
-#
-#     if GPIO.event_detected(red_channel):
-#         print ('red pressed')
-#         #requests.get(myurl, params = {'value1' : 'Big red'})
-#
-#     if GPIO.event_detected(purple_channel):
-#         print ('purple pressed')
-#         #requests.get(myurl, params={'value1': 'Small purple'})
-#
-#     if GPIO.event_detected(black_channel):
-#         print ('black pressed')
-#         #requests.get(myurl, params = {'value1' : 'Small black'})
+
 
 
 
