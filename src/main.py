@@ -14,6 +14,7 @@ channel_list = [blue_channel, red_channel, purple_channel, black_channel]
 GPIO.setmode(GPIO.BCM)
 
 def my_callback(channel):
+    time.sleep(0.5)
     if channel == blue_channel:
         val = "Big blue"
     elif channel == red_channel:
@@ -26,7 +27,7 @@ def my_callback(channel):
         val = "unknown"
     print('Edge detected on channel %s' % val)
     # requests.get(myurl, params = {'value1' : val})
-    time.sleep(0.5)
+
 
 
 for channel in channel_list:
